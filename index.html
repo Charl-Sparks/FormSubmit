@@ -67,13 +67,9 @@
 
     function addDB(tx) {
         tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Alexandre Pato", "AC Milan")');
-        alert('');
+        queryDB(tx);
         //tx.executeSql('INSERT INTO SoccerPlayer(Name,Club) VALUES ("Van Persie", "Arsenal")');
     }
-
-    $('topcoat-icon-button--large').click(function(){
-        db.transaction(addDB,successCB, errorCB);
-    });
 	
 </script>
 </head>
