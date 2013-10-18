@@ -191,13 +191,17 @@
 		db.transaction(delallrecords, errorCB);
 	});
 
+
     $('#capturePhoto').click(function(){
+        alert(pictureSource);
         capturePhoto();
     });
     $('#getPhotoLibrary').click(function(){
+        alert(pictureSource);
         getPhoto(pictureSource.PHOTOLIBRARY);
     });
     $('#getPhotoAlbum').click(function(){
+        alert(pictureSource);
         getPhoto(pictureSource.SAVEDPHOTOALBUM);
     });
 
