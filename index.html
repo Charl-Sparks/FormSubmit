@@ -118,31 +118,8 @@
     //
     function capturePhoto() {
       // Take picture using device camera and retrieve image as base64-encoded string
-      /*navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });*/
-
-        if (!navigator.camera) {
-            app.showAlert("Camera API not supported", "Error");
-            return;
-        }
-        var options =   {   quality: 50,
-                            destinationType: Camera.DestinationType.DATA_URL,
-                            sourceType: 1,      // 0:Photo Library, 1=Camera, 2=Saved Photo Album
-                            encodingType: 0,     // 0=JPG 1=PNG
-                            saveToPhotoAlbum: true
-                        };
-     
-        navigator.camera.getPicture(
-            function(imageData) {
-                $('.employee-image', this.el).attr('src', "data:image/jpeg;base64," + imageData);
-            },
-            function() {
-                app.showAlert('Error taking picture', 'Error');
-            },
-            options);
-     
-        return false;
-    };
+      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
     }
 
     // A button will call this function
@@ -217,7 +194,9 @@
 
     $('#capturePhoto').click(function(){
         alert(pictureSource);
-        capturePhoto();
+        //capturePhoto();
+        navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+        destinationType: destinationType.DATA_URL });
     });
     $('#getPhotoLibrary').click(function(){
         alert(pictureSource);
