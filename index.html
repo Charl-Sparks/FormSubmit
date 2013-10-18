@@ -59,19 +59,22 @@
 </script>
 
 <script>
-var pictureSource;   // picture source
+    var pictureSource;   // picture source
     var destinationType; // sets the format of returned value
 
     // Wait for device API libraries to load
     //
-    document.addEventListener("deviceready",onDeviceReady,false);
+    //document.addEventListener("deviceready",onDeviceReady,false);
 
     // device APIs are available
     //
-    function onDeviceReady() {
+    /*function onDeviceReady() {
         pictureSource=navigator.camera.PictureSourceType;
         destinationType=navigator.camera.DestinationType;
-    }
+    }*/
+
+    pictureSource=navigator.camera.PictureSourceType;
+    destinationType=navigator.camera.DestinationType;
 
     // Called when a photo is successfully retrieved
     //
@@ -171,7 +174,7 @@ var pictureSource;   // picture source
   </div>
 </div>
 
-<!--end of Soccer Player Page--->
+<!--end of Soccer Player Page-->
 </body>
 <script>
 	db.transaction(populateDB, errorCB, successCB);
