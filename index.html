@@ -159,10 +159,10 @@
 	<div id="my form">
 		<div>Name<input type="text" value="" id="new_name" /></div>
 		<div>Club<input type="text" value="" id="new_club" /></div>
-        <button onclick="capturePhoto();">Capture Photo</button> <br>
-        <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
-        <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
-        <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>
+        <input type="button" id="capturePhoto" value="Capture Photo"/> <br>
+        <input type="button" id="capturePhotoEdit" value="Capture Editable Photo"/> <br>
+        <input type="button" id="getPhotoLibrary" value="From Photo Library"/><br>
+        <input type="button" id="getPhotoAlbum" value="From Photo Album"/><br>
         <img style="display:none;width:60px;height:60px;" id="smallImage" src="" />
         <img style="display:none;" id="largeImage" src="" />
 
@@ -190,5 +190,17 @@
 	$('#delete_all').click(function(){
 		db.transaction(delallrecords, errorCB);
 	});
+
+    $('#capturePhoto').click(function(){
+        capturePhoto();
+    });
+    $('#getPhotoLibrary').click(function(){
+        getPhoto(pictureSource.PHOTOLIBRARY);
+    });
+    $('#getPhotoAlbum').click(function(){
+        getPhoto(pictureSource.SAVEDPHOTOALBUM);
+    });
+
+
 </script>
 </html>
